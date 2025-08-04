@@ -1,0 +1,92 @@
+[
+  {
+    "difficulty": "normal",
+    "chapter": 1,
+    "word": "CABALLO",
+    "syllables": ["CA", "BA", "LLO"],
+    "solution": "CABALLO",
+    "image": "images/words/normal/caballo.png",
+    "audio": "audio/words/normal/caballo.mp3"
+  },
+  {
+    "difficulty": "normal",
+    "chapter": 2,
+    "word": "PERRO",
+    "syllables": ["PE", "RRO"],
+    "solution": "PERRO",
+    "image": "images/words/normal/perro.png",
+    "audio": "audio/words/normal/perro.mp3"
+  },
+  {
+    "difficulty": "normal",
+    "chapter": 3,
+    "word": "MARIPOSA",
+    "syllables": ["MA", "RI", "PO", "SA"],
+    "solution": "MARIPOSA",
+    "image": "images/words/normal/mariposa.png",
+    "audio": "audio/words/normal/mariposa.mp3"
+  },
+  {
+    "difficulty": "normal",
+    "chapter": 4,
+    "word": "VENTANA",
+    "syllables": ["VEN", "TA", "NA"],
+    "solution": "VENTANA",
+    "image": "images/words/normal/ventana.png",
+    "audio": "audio/words/normal/ventana.mp3"
+  },
+  {
+    "difficulty": "normal",
+    "chapter": 5,
+    "word": "CAMINO",
+    "syllables": ["CA", "MI", "NO"],
+    "solution": "CAMINO",
+    "image": "images/words/normal/camino.png",
+    "audio": "audio/words/normal/camino.mp3"
+  },
+  {
+    "difficulty": "normal",
+    "chapter": 6,
+    "word": "PELOTA",
+    "syllables": ["PE", "LO", "TA"],
+    "solution": "PELOTA",
+    "image": "images/words/normal/pelota.png",
+    "audio": "audio/words/normal/pelota.mp3"
+  },
+  {
+    "difficulty": "normal",
+    "chapter": 7,
+    "word": "GUITARRA",
+    "syllables": ["GUI", "TA", "RRA"],
+    "solution": "GUITARRA",
+    "image": "images/words/normal/guitarra.png",
+    "audio": "audio/words/normal/guitarra.mp3"
+  },
+  {
+    "difficulty": "normal",
+    "chapter": 8,
+    "word": "BIBLIOTECA",
+    "syllables": ["BI", "BLIO", "TE", "CA"],
+    "solution": "BIBLIOTECA",
+    "image": "images/words/normal/biblioteca.png",
+    "audio": "audio/words/normal/biblioteca.mp3"
+  },
+  {
+    "difficulty": "normal",
+    "chapter": 9,
+    "word": "DINOSAURIO",
+    "syllables": ["DI", "NO", "SAU", "RIO"],
+    "solution": "DINOSAURIO",
+    "image": "images/words/normal/dinosaurio.png",
+    "audio": "audio/words/normal/dinosaurio.mp3"
+  },
+  {
+    "difficulty": "normal",
+    "chapter": 10,
+    "word": "ELEFANTE",
+    "syllables": ["E", "LE", "FAN", "TE"],
+    "solution": "ELEFANTE",
+    "image": "images/words/normal/elefante.png",
+    "audio": "audio/words/normal/elefante.mp3"
+  }
+]

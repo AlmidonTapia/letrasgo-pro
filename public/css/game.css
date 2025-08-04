@@ -1,0 +1,1193 @@
+/* Importar fuente personalizada */
+@font-face {
+  font-family: "Adventure";
+  src: url("../fonts/Adventure-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Variables CSS basadas en el prototipo */
+:root {
+  /* Colores del prototipo */
+  --sky-blue: #87ceeb;
+  --light-blue: #b0e0e6;
+  --grass-green: #9acd32;
+  --tree-green: #228b22;
+  --dark-green: #006400;
+  --bubble-green: #90ee90;
+  --bubble-border: #32cd32;
+  --mountain-gray: #696969;
+  --ground-brown: #8b4513;
+  --white: #ffffff;
+  --black: #000000;
+  --yellow-accent: #ffd700;
+  --orange-accent: #ffa500;
+  --red-accent: #ff6347;
+
+  /* Espaciado y tamaños */
+  --header-height: 80px;
+  --border-radius: 15px;
+  --bubble-size: 60px;
+  --transition: all 0.3s ease;
+}
+
+/* Reset base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Adventure", "Comic Sans MS", cursive, sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  background: url("../images/general/bg.jpg") center/cover no-repeat;
+  background-attachment: fixed;
+  font-weight: normal;
+}
+
+/* Pantallas */
+.screen {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* Fondo de paisaje natural (exacto al prototipo) */
+.landscape-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.sky-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background: linear-gradient(180deg, #87ceeb 0%, #b0e0e6 50%, #e0f6ff 100%);
+}
+
+.clouds-layer {
+  position: absolute;
+  top: 5%;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background-image: radial-gradient(
+      ellipse 120px 60px at 15% 20%,
+      rgba(255, 255, 255, 0.9) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 100px 50px at 25% 25%,
+      rgba(255, 255, 255, 0.7) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 140px 70px at 50% 15%,
+      rgba(255, 255, 255, 0.8) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 110px 55px at 65% 22%,
+      rgba(255, 255, 255, 0.6) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 130px 65px at 85% 18%,
+      rgba(255, 255, 255, 0.9) 0%,
+      transparent 70%
+    );
+  animation: cloudsDrift 30s ease-in-out infinite;
+}
+
+@keyframes cloudsDrift {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(30px);
+  }
+}
+
+.mountains-layer {
+  position: absolute;
+  bottom: 30%;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background-image: linear-gradient(
+    135deg,
+    var(--mountain-gray) 0%,
+    #a9a9a9 50%,
+    var(--mountain-gray) 100%
+  );
+  clip-path: polygon(
+    0% 100%,
+    15% 60%,
+    30% 80%,
+    45% 45%,
+    60% 70%,
+    75% 40%,
+    90% 65%,
+    100% 50%,
+    100% 100%
+  );
+}
+
+.hills-layer {
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: linear-gradient(135deg, var(--grass-green) 0%, #adff2f 100%);
+  clip-path: polygon(
+    0% 100%,
+    20% 30%,
+    40% 60%,
+    60% 20%,
+    80% 50%,
+    100% 35%,
+    100% 100%
+  );
+}
+
+.trees-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 35%;
+  background-image:
+        /* Árboles grandes de fondo */ radial-gradient(
+      ellipse 50px 120px at 8% bottom,
+      var(--tree-green) 0%,
+      var(--tree-green) 70%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 40px 100px at 12% bottom,
+      var(--dark-green) 0%,
+      var(--dark-green) 70%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 60px 140px at 20% bottom,
+      var(--tree-green) 0%,
+      var(--tree-green) 70%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 45px 110px at 25% bottom,
+      var(--dark-green) 0%,
+      var(--dark-green) 70%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 70px 160px at 35% bottom,
+      var(--tree-green) 0%,
+      var(--tree-green) 70%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 55px 130px at 42% bottom,
+      var(--dark-green) 0%,
+      var(--dark-green) 70%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 65px 150px at 55% bottom,
+      var(--tree-green) 0%,
+      var(--tree-green) 70%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 50px 120px at 62% bottom,
+      var(--dark-green) 0%,
+      var(--dark-green) 70%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 75px 170px at 75% bottom,
+      var(--tree-green) 0%,
+      var(--tree-green) 70%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 60px 140px at 82% bottom,
+      var(--dark-green) 0%,
+      var(--dark-green) 70%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 55px 130px at 92% bottom,
+      var(--tree-green) 0%,
+      var(--tree-green) 70%,
+      transparent 70%
+    );
+}
+
+.grass-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  background: linear-gradient(180deg, var(--grass-green) 0%, #7cfc00 100%);
+}
+
+.nature-details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background-image:
+        /* Flores pequeñas */ radial-gradient(
+      circle 5px at 15% 85%,
+      #ff69b4 0%,
+      #ff69b4 40%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle 4px at 25% 88%,
+      #ffd700 0%,
+      #ffd700 40%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle 6px at 35% 82%,
+      #ff69b4 0%,
+      #ff69b4 40%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle 5px at 45% 87%,
+      #ffd700 0%,
+      #ffd700 40%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle 4px at 65% 85%,
+      #ff69b4 0%,
+      #ff69b4 40%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle 5px at 75% 89%,
+      #ffd700 0%,
+      #ffd700 40%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle 6px at 85% 83%,
+      #ff69b4 0%,
+      #ff69b4 40%,
+      transparent 40%
+    ),
+    /* Arbustos pequeños */
+      radial-gradient(
+        ellipse 40px 20px at 30% 95%,
+        #9acd32 0%,
+        #9acd32 60%,
+        transparent 60%
+      ),
+    radial-gradient(
+      ellipse 35px 18px at 70% 96%,
+      #9acd32 0%,
+      #9acd32 60%,
+      transparent 60%
+    );
+}
+
+/* Header (exacto al prototipo) */
+.prototype-header {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  padding: 0 30px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: "Adventure", "Comic Sans MS", cursive, sans-serif;
+}
+
+.header-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.left-section {
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.center-section {
+  flex: 0;
+  justify-content: center;
+}
+
+.right-section {
+  flex: 1;
+  justify-content: flex-end;
+}
+
+/* Marca del juego (Education Games con icono de controlador) */
+.game-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.controller-icon {
+  font-size: 2rem;
+  color: var(--black);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.9;
+}
+
+.education-text {
+  font-size: 1.1rem;
+  color: var(--black);
+  font-weight: bold;
+  font-family: "Adventure", "Comic Sans MS", cursive, sans-serif;
+}
+
+.games-text {
+  font-size: 1.1rem;
+  color: var(--black);
+  font-weight: bold;
+  font-family: "Adventure", "Comic Sans MS", cursive, sans-serif;
+}
+
+/* Contador de progreso */
+.progress-counter {
+  background: var(--white);
+  border: 2px solid var(--black);
+  border-radius: 8px;
+  padding: 5px 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--black);
+  font-family: "Adventure", "Comic Sans MS", cursive, sans-serif;
+}
+
+/* Nombre del jugador (centro, con fondo naranja) */
+.player-name-display {
+  background: linear-gradient(135deg, var(--orange-accent), #ffb74d);
+  color: var(--white);
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 165, 0, 0.3);
+  border: 3px solid var(--white);
+  font-family: "Adventure", "Comic Sans MS", cursive, sans-serif;
+}
+
+/* Puntuación (fondo verde) */
+.score-display {
+  background: linear-gradient(135deg, var(--grass-green), #adff2f);
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(154, 205, 50, 0.3);
+  border: 3px solid var(--white);
+  font-family: "Adventure", "Comic Sans MS", cursive, sans-serif;
+}
+
+/* Botones de acción */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.action-btn {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--black);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  background: #f5f5f5;
+}
+
+.action-btn:active {
+  transform: translateY(0);
+}
+
+.white-circle {
+  width: 20px;
+  height: 20px;
+  background: var(--white);
+  border-radius: 50%;
+  border: 2px solid var(--black);
+}
+
+.back-arrow-btn {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--black);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+}
+
+.back-arrow-btn:hover {
+  transform: translateX(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Área principal del juego */
+.game-playground {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: calc(100vh - var(--header-height));
+  padding: 20px;
+}
+
+/* Área de imagen central (exacta al prototipo) */
+.central-image-area {
+  flex: 0 0 auto;
+  margin-top: 20px;
+}
+
+.image-window {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.image-border {
+  border: 6px solid var(--bubble-border);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background: var(--white);
+}
+
+.game-image {
+  width: 320px;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Zona de construcción de palabras */
+.word-construction-zone {
+  flex: 0 0 auto;
+  margin: 30px 0;
+}
+
+.construction-line {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.word-slots {
+  min-width: 500px;
+  min-height: 60px;
+  background: rgba(240, 248, 255, 0.9);
+  border: 4px dashed var(--bubble-border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 25px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--tree-green);
+  transition: var(--transition);
+  position: relative;
+}
+
+.word-slots.drag-over {
+  background: rgba(144, 238, 144, 0.2);
+  border-color: var(--grass-green);
+  color: var(--grass-green);
+  transform: scale(1.02);
+}
+
+.placeholder-text {
+  opacity: 0.7;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Área de letras/sílabas (burbujas verdes) */
+.letters-playground {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.bubble-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: var(--border-radius);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  border: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+/* Piezas arrastrables (burbujas verdes) */
+.draggable-piece,
+.bubble-piece {
+  width: var(--bubble-size);
+  height: var(--bubble-size);
+  background: linear-gradient(135deg, var(--bubble-green) 0%, #7fee7f 100%);
+  border: 3px solid var(--bubble-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--dark-green);
+  cursor: grab;
+  transition: var(--transition);
+  user-select: none;
+  box-shadow: 0 4px 15px rgba(50, 205, 50, 0.3);
+  text-transform: uppercase;
+  font-family: "Adventure", Arial, sans-serif;
+}
+
+.draggable-piece:hover,
+.bubble-piece:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(50, 205, 50, 0.5);
+  background: linear-gradient(135deg, #98fb98 0%, var(--bubble-green) 100%);
+}
+
+.draggable-piece:active,
+.bubble-piece:active {
+  cursor: grabbing;
+  transform: scale(0.95);
+}
+
+/* Burbujas de letras (exactas al prototipo) */
+.letter-bubble {
+  width: var(--bubble-size);
+  height: var(--bubble-size);
+  background: linear-gradient(135deg, var(--bubble-green), #98fb98);
+  border: 3px solid var(--bubble-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--black);
+  cursor: grab;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  user-select: none;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.letter-bubble:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(50, 205, 50, 0.4);
+  background: linear-gradient(135deg, #98fb98, var(--bubble-green));
+}
+
+.letter-bubble:active {
+  cursor: grabbing;
+  transform: scale(1.15);
+}
+
+.letter-bubble.dragging {
+  opacity: 0.8;
+  transform: scale(1.1);
+  z-index: 1000;
+}
+
+/* Botón volver (esquina inferior izquierda) */
+.return-button-area {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+}
+
+.return-button {
+  background: linear-gradient(135deg, var(--red-accent), #ff7f7f);
+  color: var(--white);
+  border: none;
+  border-radius: 25px;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(255, 99, 71, 0.3);
+  text-transform: lowercase;
+  border: 3px solid var(--white);
+}
+
+.return-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 99, 71, 0.4);
+  background: linear-gradient(135deg, #ff7f7f, var(--red-accent));
+}
+
+/* Pantallas de selección */
+.mode-selection-area,
+.difficulty-selection-area,
+.chapter-selection-area {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - var(--header-height));
+  padding: 40px;
+  font-family: "Adventure", "Comic Sans MS", cursive, sans-serif;
+}
+
+/* Tarjetas de modo */
+.mode-cards-container {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.mode-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--border-radius);
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  transition: var(--transition);
+  min-width: 300px;
+  cursor: pointer;
+}
+
+.mode-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+.mode-icon-area {
+  margin-bottom: 20px;
+}
+
+.mode-icon {
+  font-size: 4rem;
+  color: var(--tree-green);
+}
+
+.mode-title {
+  font-size: 2.2rem;
+  color: var(--tree-green);
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.mode-description {
+  font-size: 1.3rem;
+  color: var(--black);
+  margin-bottom: 25px;
+  opacity: 0.8;
+}
+
+.mode-play-btn {
+  background: linear-gradient(135deg, var(--grass-green), #adff2f);
+  color: var(--white);
+  border: none;
+  border-radius: 20px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(154, 205, 50, 0.3);
+  text-transform: uppercase;
+  border: 3px solid var(--white);
+}
+
+.mode-play-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(154, 205, 50, 0.4);
+}
+
+/* Título de selección de nivel */
+.difficulty-selection-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: var(--tree-green);
+  text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.8);
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: "Adventure", "Comic Sans MS", cursive, sans-serif;
+}
+
+/* Tarjetas de dificultad (exactas al prototipo) */
+.difficulty-cards-container {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.difficulty-card {
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Adventure", "Comic Sans MS", cursive, sans-serif;
+
+  /* Borde ondulado como en el prototipo */
+  border: 6px solid transparent;
+  background-clip: padding-box;
+}
+
+.difficulty-card::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  background: linear-gradient(45deg, #32cd32, #90ee90, #32cd32);
+  border-radius: 20px;
+  z-index: -1;
+}
+
+.difficulty-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.easy-level {
+  border-color: var(--grass-green);
+}
+
+.easy-level::before {
+  background: linear-gradient(
+    45deg,
+    var(--grass-green),
+    #adff2f,
+    var(--grass-green)
+  );
+}
+
+.normal-level {
+  border-color: var(--orange-accent);
+}
+
+.normal-level::before {
+  background: linear-gradient(
+    45deg,
+    var(--orange-accent),
+    #ffb74d,
+    var(--orange-accent)
+  );
+}
+
+.hard-level {
+  border-color: #4a90e2;
+}
+
+.hard-level::before {
+  background: linear-gradient(45deg, #4a90e2, #87ceeb, #4a90e2);
+}
+
+.difficulty-label {
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: "Adventure", "Comic Sans MS", cursive, sans-serif;
+}
+
+.easy-level .difficulty-label {
+  color: var(--grass-green);
+}
+
+.normal-level .difficulty-label {
+  color: var(--orange-accent);
+}
+
+.hard-level .difficulty-label {
+  color: #4a90e2;
+}
+
+.difficulty-emoji {
+  display: none; /* Quitamos los emojis para que sea igual al prototipo */
+}
+
+.difficulty-select-btn {
+  display: none; /* Los botones están integrados en las tarjetas */
+}
+
+/* Selección de capítulos (exacta al prototipo) */
+.level-indicator {
+  font-size: 3.5rem;
+  color: var(--grass-green);
+  margin-bottom: 50px;
+  text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.8);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: "Adventure", "Comic Sans MS", cursive, sans-serif;
+}
+
+.chapters-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+}
+
+.chapter-number,
+.btn.chapter-btn {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--grass-green);
+  border: none;
+  border-radius: 20px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-family: "Adventure", "Comic Sans MS", cursive, sans-serif;
+
+  /* Borde ondulado como en el prototipo */
+  border: 6px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.chapter-number::before,
+.btn.chapter-btn::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  background: linear-gradient(45deg, #32cd32, #90ee90, #32cd32);
+  border-radius: 20px;
+  z-index: -1;
+}
+
+.chapter-number:hover,
+.btn.chapter-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(50, 205, 50, 0.4);
+}
+
+.chapter-number.locked,
+.btn.chapter-btn.locked {
+  background: #e0e0e0;
+  color: #9e9e9e;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.chapter-number.locked::before,
+.btn.chapter-btn.locked::before {
+  background: linear-gradient(45deg, #bdbdbd, #e0e0e0, #bdbdbd);
+}
+
+.chapter-number.locked:hover,
+.btn.chapter-btn.locked:hover {
+  transform: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.chapter-number.current,
+.btn.chapter-btn.current {
+  background: linear-gradient(135deg, var(--yellow-accent), #ffe135);
+  color: var(--black);
+  animation: chapterPulse 2s ease-in-out infinite;
+}
+
+.chapter-number.current::before,
+.btn.chapter-btn.current::before {
+  background: linear-gradient(45deg, #ffd700, #fff200, #ffd700);
+}
+
+/* Botón regresar en pantallas de selección */
+.selection-back-btn {
+  background: linear-gradient(135deg, var(--red-accent), #ff7f7f);
+  color: var(--white);
+  border: none;
+  border-radius: 25px;
+  padding: 15px 35px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 6px 20px rgba(255, 99, 71, 0.3);
+  text-transform: uppercase;
+  border: 4px solid var(--white);
+  font-family: "Adventure", "Comic Sans MS", cursive, sans-serif;
+  letter-spacing: 2px;
+}
+
+.selection-back-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 99, 71, 0.4);
+  background: linear-gradient(135deg, #ff7f7f, var(--red-accent));
+}
+
+@keyframes chapterPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
+  }
+}
+
+/* Overlay de retroalimentación */
+.feedback-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  backdrop-filter: blur(5px);
+}
+
+.feedback-message {
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--grass-green);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--border-radius);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  border: 5px solid var(--grass-green);
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .prototype-header {
+    padding: 0 20px;
+    flex-wrap: wrap;
+    height: auto;
+    min-height: var(--header-height);
+  }
+
+  .header-section {
+    gap: 15px;
+  }
+
+  .game-image {
+    width: 280px;
+    height: 200px;
+  }
+
+  .word-slots {
+    min-width: 400px;
+  }
+
+  .mode-cards-container,
+  .difficulty-cards-container {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .prototype-header {
+    padding: 0 15px;
+  }
+
+  .player-name-display {
+    font-size: 1.1rem;
+    padding: 8px 20px;
+  }
+
+  .score-display {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
+
+  .action-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+
+  .game-image {
+    width: 240px;
+    height: 160px;
+  }
+
+  .word-slots {
+    min-width: 300px;
+    min-height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .letter-bubble {
+    width: 50px;
+    height: 50px;
+    font-size: 1rem;
+  }
+
+  .chapters-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    max-width: 400px;
+  }
+
+  .chapter-number {
+    font-size: 1.5rem;
+  }
+
+  .mode-cards-container,
+  .difficulty-cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mode-card,
+  .difficulty-card {
+    min-width: 280px;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .prototype-header {
+    padding: 0 10px;
+  }
+
+  .controller-icon {
+    font-size: 1.5rem;
+  }
+
+  .brand-text {
+    font-size: 0.9rem;
+  }
+
+  .game-image {
+    width: 200px;
+    height: 140px;
+  }
+
+  .word-slots {
+    min-width: 250px;
+    font-size: 1rem;
+  }
+
+  .letter-bubble {
+    width: 45px;
+    height: 45px;
+    font-size: 0.9rem;
+  }
+
+  .feedback-message {
+    font-size: 2.5rem;
+    padding: 30px;
+  }
+
+  .chapters-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 300px;
+  }
+}

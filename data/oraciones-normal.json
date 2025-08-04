@@ -1,0 +1,136 @@
+[
+  {
+    "difficulty": "normal",
+    "chapter": 1,
+    "sentence": "EL PROFESOR ENSEÑA MATEMÁTICAS EN LA ESCUELA",
+    "words": ["EL", "PROFESOR", "ENSEÑA", "MATEMÁTICAS", "EN", "LA", "ESCUELA"],
+    "solution": "EL PROFESOR ENSEÑA MATEMÁTICAS EN LA ESCUELA",
+    "image": "images/sentences/normal/profesor_enseña.png",
+    "audio": "audio/sentences/normal/profesor_enseña.mp3"
+  },
+  {
+    "difficulty": "normal",
+    "chapter": 2,
+    "sentence": "LA MARIPOSA VUELA ENTRE LAS FLORES DEL JARDÍN",
+    "words": [
+      "LA",
+      "MARIPOSA",
+      "VUELA",
+      "ENTRE",
+      "LAS",
+      "FLORES",
+      "DEL",
+      "JARDÍN"
+    ],
+    "solution": "LA MARIPOSA VUELA ENTRE LAS FLORES DEL JARDÍN",
+    "image": "images/sentences/normal/mariposa_vuela.png",
+    "audio": "audio/sentences/normal/mariposa_vuela.mp3"
+  },
+  {
+    "difficulty": "normal",
+    "chapter": 3,
+    "sentence": "LOS ESTUDIANTES ESCRIBEN UNA CARTA A SUS PADRES",
+    "words": [
+      "LOS",
+      "ESTUDIANTES",
+      "ESCRIBEN",
+      "UNA",
+      "CARTA",
+      "A",
+      "SUS",
+      "PADRES"
+    ],
+    "solution": "LOS ESTUDIANTES ESCRIBEN UNA CARTA A SUS PADRES",
+    "image": "images/sentences/normal/estudiantes_escriben.png",
+    "audio": "audio/sentences/normal/estudiantes_escriben.mp3"
+  },
+  {
+    "difficulty": "normal",
+    "chapter": 4,
+    "sentence": "EL MÉDICO EXAMINA AL PACIENTE CON MUCHO CUIDADO",
+    "words": [
+      "EL",
+      "MÉDICO",
+      "EXAMINA",
+      "AL",
+      "PACIENTE",
+      "CON",
+      "MUCHO",
+      "CUIDADO"
+    ],
+    "solution": "EL MÉDICO EXAMINA AL PACIENTE CON MUCHO CUIDADO",
+    "image": "images/sentences/normal/medico_examina.png",
+    "audio": "audio/sentences/normal/medico_examina.mp3"
+  },
+  {
+    "difficulty": "normal",
+    "chapter": 5,
+    "sentence": "LA BIBLIOTECA TIENE MUCHOS LIBROS INTERESANTES",
+    "words": ["LA", "BIBLIOTECA", "TIENE", "MUCHOS", "LIBROS", "INTERESANTES"],
+    "solution": "LA BIBLIOTECA TIENE MUCHOS LIBROS INTERESANTES",
+    "image": "images/sentences/normal/biblioteca_libros.png",
+    "audio": "audio/sentences/normal/biblioteca_libros.mp3"
+  },
+  {
+    "difficulty": "normal",
+    "chapter": 6,
+    "sentence": "EL COCINERO PREPARA UNA DELICIOSA COMIDA",
+    "words": ["EL", "COCINERO", "PREPARA", "UNA", "DELICIOSA", "COMIDA"],
+    "solution": "EL COCINERO PREPARA UNA DELICIOSA COMIDA",
+    "image": "images/sentences/normal/cocinero_prepara.png",
+    "audio": "audio/sentences/normal/cocinero_prepara.mp3"
+  },
+  {
+    "difficulty": "normal",
+    "chapter": 7,
+    "sentence": "LAS MONTAÑAS SON ALTAS Y MAJESTUOSAS",
+    "words": ["LAS", "MONTAÑAS", "SON", "ALTAS", "Y", "MAJESTUOSAS"],
+    "solution": "LAS MONTAÑAS SON ALTAS Y MAJESTUOSAS",
+    "image": "images/sentences/normal/montañas_altas.png",
+    "audio": "audio/sentences/normal/montañas_altas.mp3"
+  },
+  {
+    "difficulty": "normal",
+    "chapter": 8,
+    "sentence": "EL MÚSICO TOCA LA GUITARRA CON GRAN PASIÓN",
+    "words": [
+      "EL",
+      "MÚSICO",
+      "TOCA",
+      "LA",
+      "GUITARRA",
+      "CON",
+      "GRAN",
+      "PASIÓN"
+    ],
+    "solution": "EL MÚSICO TOCA LA GUITARRA CON GRAN PASIÓN",
+    "image": "images/sentences/normal/musico_toca.png",
+    "audio": "audio/sentences/normal/musico_toca.mp3"
+  },
+  {
+    "difficulty": "normal",
+    "chapter": 9,
+    "sentence": "LA TORMENTA ELÉCTRICA ILUMINA EL CIELO NOCTURNO",
+    "words": [
+      "LA",
+      "TORMENTA",
+      "ELÉCTRICA",
+      "ILUMINA",
+      "EL",
+      "CIELO",
+      "NOCTURNO"
+    ],
+    "solution": "LA TORMENTA ELÉCTRICA ILUMINA EL CIELO NOCTURNO",
+    "image": "images/sentences/normal/tormenta_electrica.png",
+    "audio": "audio/sentences/normal/tormenta_electrica.mp3"
+  },
+  {
+    "difficulty": "normal",
+    "chapter": 10,
+    "sentence": "EL ARQUEÓLOGO DESCUBRE TESOROS ANTIGUOS",
+    "words": ["EL", "ARQUEÓLOGO", "DESCUBRE", "TESOROS", "ANTIGUOS"],
+    "solution": "EL ARQUEÓLOGO DESCUBRE TESOROS ANTIGUOS",
+    "image": "images/sentences/normal/arqueologo_descubre.png",
+    "audio": "audio/sentences/normal/arqueologo_descubre.mp3"
+  }
+]

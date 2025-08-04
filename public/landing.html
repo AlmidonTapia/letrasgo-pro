@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LetrasGo Pro - Juego Educativo</title>
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="icon" type="image/png" href="images/general/logo.png">
+</head>
+
+<body>
+    <!-- Pantalla de Bienvenida -->
+    <div id="welcome-screen" class="screen active">
+        <div class="background-container">
+            <div class="sky-gradient"></div>
+            <div class="clouds"></div>
+            <div class="balloons"></div>
+        </div>
+
+        <div class="content-container">
+            <header class="game-header">
+                <div class="logo-container">
+                    <img src="images/general/logo.png" alt="LetrasGo Pro" class="logo">
+                    <h1 class="game-title">LetrasGo Pro</h1>
+                </div>
+                <div class="subtitle">Juego Educativo de Palabras y Oraciones</div>
+            </header>
+
+            <main class="welcome-content">
+                <div class="welcome-card">
+                    <h2>¡Bienvenido al mundo de las letras!</h2>
+                    <p>Aprende jugando con palabras y oraciones de manera divertida</p>
+                    <button id="start-btn" class="btn btn-primary btn-large">
+                        <span>¡COMENZAR!</span>
+                    </button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Pantalla de Selección de Autenticación -->
+    <div id="auth-choice-screen" class="screen">
+        <div class="background-container">
+            <div class="sky-gradient"></div>
+            <div class="clouds"></div>
+        </div>
+
+        <div class="content-container">
+            <header class="auth-header">
+                <button class="btn-back" data-target="welcome-screen">
+                    <span>←</span>
+                </button>
+                <h2>¿Cómo quieres continuar?</h2>
+            </header>
+
+            <main class="auth-choice-content">
+                <div class="auth-options">
+                    <div class="auth-option">
+                        <div class="auth-card login-card">
+                            <div class="auth-icon">👤</div>
+                            <h3>Ya tengo cuenta</h3>
+                            <p>Inicia sesión para continuar tu aventura</p>
+                            <button id="go-to-login-btn" class="btn btn-secondary">
+                                INICIAR SESIÓN
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="auth-option">
+                        <div class="auth-card register-card">
+                            <div class="auth-icon">✨</div>
+                            <h3>Soy nuevo</h3>
+                            <p>Créate una cuenta y comienza a jugar</p>
+                            <button id="go-to-register-btn" class="btn btn-primary">
+                                REGISTRARME
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Pantalla de Login -->
+    <div id="login-screen" class="screen">
+        <div class="background-container">
+            <div class="sky-gradient"></div>
+            <div class="clouds"></div>
+        </div>
+
+        <div class="content-container">
+            <header class="form-header">
+                <button class="btn-back" data-target="auth-choice-screen">
+                    <span>←</span>
+                </button>
+                <h2>Iniciar Sesión</h2>
+            </header>
+
+            <main class="form-content">
+                <div class="form-card">
+                    <div class="form-icon">🎮</div>
+                    <form id="login-form" class="auth-form">
+                        <div class="input-group">
+                            <label for="login-username">Nombre de usuario</label>
+                            <input type="text" id="login-username" required placeholder="Escribe tu nombre de usuario">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="login-password">Contraseña</label>
+                            <input type="password" id="login-password" required placeholder="Escribe tu contraseña">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">
+                            ENTRAR AL JUEGO
+                        </button>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Pantalla de Registro -->
+    <div id="register-screen" class="screen">
+        <div class="background-container">
+            <div class="sky-gradient"></div>
+            <div class="clouds"></div>
+        </div>
+
+        <div class="content-container">
+            <header class="form-header">
+                <button class="btn-back" data-target="auth-choice-screen">
+                    <span>←</span>
+                </button>
+                <h2>Crear Cuenta</h2>
+            </header>
+
+            <main class="form-content">
+                <div class="form-card">
+                    <div class="form-icon">⭐</div>
+                    <form id="register-form" class="auth-form">
+                        <div class="input-group">
+                            <label for="register-username">Nombre de usuario</label>
+                            <input type="text" id="register-username" required placeholder="Elige tu nombre de usuario">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="register-password">Contraseña</label>
+                            <input type="password" id="register-password" required placeholder="Crea una contraseña">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="register-confirm-password">Confirmar contraseña</label>
+                            <input type="password" id="register-confirm-password" required
+                                placeholder="Confirma tu contraseña">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">
+                            CREAR CUENTA
+                        </button>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Overlay de mensajes -->
+    <div id="message-overlay" class="message-overlay">
+        <div id="message" class="message"></div>
+    </div>
+
+    <script src="js/apiService.js"></script>
+    <script src="js/landing.js"></script>
+</body>
+
+</html>

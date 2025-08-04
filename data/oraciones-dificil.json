@@ -1,0 +1,206 @@
+[
+  {
+    "difficulty": "difficult",
+    "chapter": 1,
+    "sentence": "EL OTORRINOLARINGÓLOGO ESPECIALISTA EXAMINÓ MINUCIOSAMENTE AL PACIENTE CON PROBLEMAS RESPIRATORIOS",
+    "words": [
+      "EL",
+      "OTORRINOLARINGÓLOGO",
+      "ESPECIALISTA",
+      "EXAMINÓ",
+      "MINUCIOSAMENTE",
+      "AL",
+      "PACIENTE",
+      "CON",
+      "PROBLEMAS",
+      "RESPIRATORIOS"
+    ],
+    "solution": "EL OTORRINOLARINGÓLOGO ESPECIALISTA EXAMINÓ MINUCIOSAMENTE AL PACIENTE CON PROBLEMAS RESPIRATORIOS",
+    "image": "images/sentences/dificil/otorrinolaringologo.png",
+    "audio": "audio/sentences/dificil/otorrinolaringologo.mp3"
+  },
+  {
+    "difficulty": "difficult",
+    "chapter": 2,
+    "sentence": "LA ELECTROENCEFALOGRAFÍA REVELÓ ACTIVIDAD NEUROLÓGICA ANORMAL EN EL LÓBULO TEMPORAL",
+    "words": [
+      "LA",
+      "ELECTROENCEFALOGRAFÍA",
+      "REVELÓ",
+      "ACTIVIDAD",
+      "NEUROLÓGICA",
+      "ANORMAL",
+      "EN",
+      "EL",
+      "LÓBULO",
+      "TEMPORAL"
+    ],
+    "solution": "LA ELECTROENCEFALOGRAFÍA REVELÓ ACTIVIDAD NEUROLÓGICA ANORMAL EN EL LÓBULO TEMPORAL",
+    "image": "images/sentences/dificil/electroencefalografia.png",
+    "audio": "audio/sentences/dificil/electroencefalografia.mp3"
+  },
+  {
+    "difficulty": "difficult",
+    "chapter": 3,
+    "sentence": "EL ANTICONSTITUCIONALMENTE REDACTADO DOCUMENTO GENERÓ CONTROVERSIA EN LA ASAMBLEA LEGISLATIVA",
+    "words": [
+      "EL",
+      "ANTICONSTITUCIONALMENTE",
+      "REDACTADO",
+      "DOCUMENTO",
+      "GENERÓ",
+      "CONTROVERSIA",
+      "EN",
+      "LA",
+      "ASAMBLEA",
+      "LEGISLATIVA"
+    ],
+    "solution": "EL ANTICONSTITUCIONALMENTE REDACTADO DOCUMENTO GENERÓ CONTROVERSIA EN LA ASAMBLEA LEGISLATIVA",
+    "image": "images/sentences/dificil/anticonstitucionalmente.png",
+    "audio": "audio/sentences/dificil/anticonstitucionalmente.mp3"
+  },
+  {
+    "difficulty": "difficult",
+    "chapter": 4,
+    "sentence": "LA PSEUDOHIPOPARATIROIDISMO AFECTA LA ABSORCIÓN DE CALCIO EN EL ORGANISMO HUMANO",
+    "words": [
+      "LA",
+      "PSEUDOHIPOPARATIROIDISMO",
+      "AFECTA",
+      "LA",
+      "ABSORCIÓN",
+      "DE",
+      "CALCIO",
+      "EN",
+      "EL",
+      "ORGANISMO",
+      "HUMANO"
+    ],
+    "solution": "LA PSEUDOHIPOPARATIROIDISMO AFECTA LA ABSORCIÓN DE CALCIO EN EL ORGANISMO HUMANO",
+    "image": "images/sentences/dificil/pseudohipoparatiroidismo.png",
+    "audio": "audio/sentences/dificil/pseudohipoparatiroidismo.mp3"
+  },
+  {
+    "difficulty": "difficult",
+    "chapter": 5,
+    "sentence": "EL NEUMONOULTRAMICROSCOPICOSILICOVOLCANOCONIOSIS ES UNA ENFERMEDAD PULMONAR CAUSADA POR INHALACIÓN DE PARTÍCULAS",
+    "words": [
+      "EL",
+      "NEUMONOULTRAMICROSCOPICOSILICOVOLCANOCONIOSIS",
+      "ES",
+      "UNA",
+      "ENFERMEDAD",
+      "PULMONAR",
+      "CAUSADA",
+      "POR",
+      "INHALACIÓN",
+      "DE",
+      "PARTÍCULAS"
+    ],
+    "solution": "EL NEUMONOULTRAMICROSCOPICOSILICOVOLCANOCONIOSIS ES UNA ENFERMEDAD PULMONAR CAUSADA POR INHALACIÓN DE PARTÍCULAS",
+    "image": "images/sentences/dificil/neumonoultramicroscopicosilicovolcanoconiosis.png",
+    "audio": "audio/sentences/dificil/neumonoultramicroscopicosilicovolcanoconiosis.mp3"
+  },
+  {
+    "difficulty": "difficult",
+    "chapter": 6,
+    "sentence": "LA ESPECTROFOTOMETRÍA PERMITE ANALIZAR LA COMPOSICIÓN QUÍMICA DE SUSTANCIAS DESCONOCIDAS",
+    "words": [
+      "LA",
+      "ESPECTROFOTOMETRÍA",
+      "PERMITE",
+      "ANALIZAR",
+      "LA",
+      "COMPOSICIÓN",
+      "QUÍMICA",
+      "DE",
+      "SUSTANCIAS",
+      "DESCONOCIDAS"
+    ],
+    "solution": "LA ESPECTROFOTOMETRÍA PERMITE ANALIZAR LA COMPOSICIÓN QUÍMICA DE SUSTANCIAS DESCONOCIDAS",
+    "image": "images/sentences/dificil/espectrofotometria.png",
+    "audio": "audio/sentences/dificil/espectrofotometria.mp3"
+  },
+  {
+    "difficulty": "difficult",
+    "chapter": 7,
+    "sentence": "EL MAGNETOHIDRODINÁMICO GENERADOR CONVIERTE LA ENERGÍA CINÉTICA EN ELECTRICIDAD",
+    "words": [
+      "EL",
+      "MAGNETOHIDRODINÁMICO",
+      "GENERADOR",
+      "CONVIERTE",
+      "LA",
+      "ENERGÍA",
+      "CINÉTICA",
+      "EN",
+      "ELECTRICIDAD"
+    ],
+    "solution": "EL MAGNETOHIDRODINÁMICO GENERADOR CONVIERTE LA ENERGÍA CINÉTICA EN ELECTRICIDAD",
+    "image": "images/sentences/dificil/magnetohidrodinamico.png",
+    "audio": "audio/sentences/dificil/magnetohidrodinamico.mp3"
+  },
+  {
+    "difficulty": "difficult",
+    "chapter": 8,
+    "sentence": "LA FARMACOCINÉTICA ESTUDIA LA ABSORCIÓN Y ELIMINACIÓN DE MEDICAMENTOS EN EL CUERPO",
+    "words": [
+      "LA",
+      "FARMACOCINÉTICA",
+      "ESTUDIA",
+      "LA",
+      "ABSORCIÓN",
+      "Y",
+      "ELIMINACIÓN",
+      "DE",
+      "MEDICAMENTOS",
+      "EN",
+      "EL",
+      "CUERPO"
+    ],
+    "solution": "LA FARMACOCINÉTICA ESTUDIA LA ABSORCIÓN Y ELIMINACIÓN DE MEDICAMENTOS EN EL CUERPO",
+    "image": "images/sentences/dificil/farmacocinetica.png",
+    "audio": "audio/sentences/dificil/farmacocinetica.mp3"
+  },
+  {
+    "difficulty": "difficult",
+    "chapter": 9,
+    "sentence": "EL DESOXIRRIBONUCLEICO ÁCIDO CONTIENE LA INFORMACIÓN GENÉTICA DE TODOS LOS SERES VIVOS",
+    "words": [
+      "EL",
+      "DESOXIRRIBONUCLEICO",
+      "ÁCIDO",
+      "CONTIENE",
+      "LA",
+      "INFORMACIÓN",
+      "GENÉTICA",
+      "DE",
+      "TODOS",
+      "LOS",
+      "SERES",
+      "VIVOS"
+    ],
+    "solution": "EL DESOXIRRIBONUCLEICO ÁCIDO CONTIENE LA INFORMACIÓN GENÉTICA DE TODOS LOS SERES VIVOS",
+    "image": "images/sentences/dificil/desoxirribonucleico.png",
+    "audio": "audio/sentences/dificil/desoxirribonucleico.mp3"
+  },
+  {
+    "difficulty": "difficult",
+    "chapter": 10,
+    "sentence": "LA INMUNOHIPERSENSIBILIDAD PRODUCE REACCIONES ALÉRGICAS SEVERAS EN ORGANISMOS SUSCEPTIBLES",
+    "words": [
+      "LA",
+      "INMUNOHIPERSENSIBILIDAD",
+      "PRODUCE",
+      "REACCIONES",
+      "ALÉRGICAS",
+      "SEVERAS",
+      "EN",
+      "ORGANISMOS",
+      "SUSCEPTIBLES"
+    ],
+    "solution": "LA INMUNOHIPERSENSIBILIDAD PRODUCE REACCIONES ALÉRGICAS SEVERAS EN ORGANISMOS SUSCEPTIBLES",
+    "image": "images/sentences/dificil/inmunohipersensibilidad.png",
+    "audio": "audio/sentences/dificil/inmunohipersensibilidad.mp3"
+  }
+]

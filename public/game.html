@@ -1,0 +1,301 @@
+<!DOCTYPE html> <!-- Pantalla de Juego Principal (exacta al prototipo) -->
+<div id="game-play-screen" class="screen">`<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LetrasGo Pro - Juego</title>
+        <link rel="stylesheet" href="css/game.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+        <link rel="icon" type="image/png" href="images/general/logo.png">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+    </head>
+
+    <body>
+        <!-- Pantalla de Juego Principal (exacta al prototipo) -->
+        <div id="game-play-screen" class="screen active">
+            <!-- Fondo de paisaje natural -->
+            <div class="landscape-background">
+                <div class="sky-layer"></div>
+                <div class="clouds-layer"></div>
+                <div class="mountains-layer"></div>
+                <div class="hills-layer"></div>
+                <div class="trees-layer"></div>
+                <div class="grass-layer"></div>
+                <div class="nature-details"></div>
+            </div>
+
+            <!-- Header exacto al prototipo -->
+            <header class="prototype-header">
+                <div class="header-section left-section">
+                    <div class="game-brand">
+                        <i class="bi bi-controller controller-icon"></i>
+                        <div class="brand-text">
+                            <span class="education-text">Education</span>
+                            <span class="games-text">Games</span>
+                        </div>
+                    </div>
+                    <div class="progress-counter" id="progress-display">0/10</div>
+                </div>
+
+                <div class="header-section center-section">
+                    <div class="player-name-display" id="player-name">JUANITO69</div>
+                </div>
+
+                <div class="header-section right-section">
+                    <div class="score-display" id="player-score">SCORE: 00</div>
+                    <div class="action-buttons">
+                        <button class="action-btn sound-btn" id="sound-toggle">
+                            <i class="bi bi-volume-up"></i>
+                        </button>
+                        <button class="action-btn refresh-btn" id="refresh-game">
+                            <i class="bi bi-arrow-clockwise"></i>
+                        </button>
+                        <button class="action-btn help-btn" id="help-btn">
+                            <i class="bi bi-question-circle"></i>
+                        </button>
+                        <button class="action-btn logout-btn" id="logout-btn">
+                            <div class="white-circle"></div>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Contenido del juego exacto al prototipo -->
+            <main class="game-playground">
+                <!-- Área de la imagen central -->
+                <div class="central-image-area">
+                    <div class="image-window">
+                        <div class="image-border">
+                            <img id="question-image" src="images/words/facil/casa.png" alt="Imagen del ejercicio"
+                                class="game-image">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Área de construcción de palabras -->
+                <div class="word-construction-zone">
+                    <div class="construction-line">
+                        <div id="drop-target" class="word-slots">
+                            <span class="placeholder-text">ARRASTRE AQUÍ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Área de letras/sílabas (burbujas verdes) -->
+                <div class="letters-playground">
+                    <div id="pieces-container" class="bubble-container">
+                        <!-- Las burbujas de letras se generan dinámicamente -->
+                    </div>
+                </div>
+
+                <!-- Botón volver (esquina inferior izquierda) -->
+                <div class="return-button-area">
+                    <button class="return-button" data-target="chapter-select-screen">
+                        <span>volver</span>
+                    </button>
+                </div>
+            </main>
+        </div>
+
+        <!-- Pantalla de Selección de Modo -->
+        <div id="mode-select-screen" class="screen">
+            <div class="landscape-background">
+                <div class="sky-layer"></div>
+                <div class="clouds-layer"></div>
+                <div class="mountains-layer"></div>
+                <div class="hills-layer"></div>
+                <div class="trees-layer"></div>
+                <div class="grass-layer"></div>
+            </div>
+
+            <header class="prototype-header">
+                <div class="header-section left-section">
+                    <div class="game-brand">
+                        <i class="bi bi-controller controller-icon"></i>
+                        <div class="brand-text">
+                            <span class="education-text">Education</span>
+                            <span class="games-text">Games</span>
+                        </div>
+                    </div>
+                    <div class="progress-counter">0/10</div>
+                </div>
+
+                <div class="header-section center-section">
+                    <div class="player-name-display" id="player-name-2">JUANITO69</div>
+                </div>
+
+                <div class="header-section right-section">
+                    <div class="score-display" id="player-score-2">SCORE: 00</div>
+                    <div class="action-buttons">
+                        <button class="action-btn sound-btn">
+                            <i class="bi bi-volume-up"></i>
+                        </button>
+                        <button class="action-btn refresh-btn">
+                            <i class="bi bi-arrow-clockwise"></i>
+                        </button>
+                        <button class="action-btn help-btn">
+                            <i class="bi bi-question-circle"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <main class="mode-selection-area">
+                <div class="mode-cards-container">
+                    <div class="mode-card words-mode" data-mode="words">
+                        <div class="mode-icon-area">
+                            <i class="bi bi-fonts mode-icon"></i>
+                        </div>
+                        <h3 class="mode-title">Palabras</h3>
+                        <p class="mode-description">Forma palabras con sílabas</p>
+                        <button class="mode-play-btn btn-mode" data-mode="words">JUGAR</button>
+                    </div>
+
+                    <div class="mode-card sentences-mode" data-mode="sentences">
+                        <div class="mode-icon-area">
+                            <i class="bi bi-chat-text mode-icon"></i>
+                        </div>
+                        <h3 class="mode-title">Oraciones</h3>
+                        <p class="mode-description">Construye oraciones completas</p>
+                        <button class="mode-play-btn btn-mode" data-mode="sentences">JUGAR</button>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Pantalla de Selección de Dificultad -->
+        <div id="difficulty-select-screen" class="screen">
+            <div class="landscape-background">
+                <div class="sky-layer"></div>
+                <div class="clouds-layer"></div>
+                <div class="mountains-layer"></div>
+                <div class="hills-layer"></div>
+                <div class="trees-layer"></div>
+                <div class="grass-layer"></div>
+            </div>
+
+            <header class="prototype-header">
+                <div class="header-section left-section">
+                    <button class="back-arrow-btn btn-back" data-target="mode-select-screen">
+                        <i class="bi bi-arrow-left"></i>
+                    </button>
+                    <div class="game-brand">
+                        <i class="bi bi-controller controller-icon"></i>
+                        <div class="brand-text">
+                            <span class="education-text">Education</span>
+                            <span class="games-text">Games</span>
+                        </div>
+                    </div>
+                    <div class="progress-counter">0/10</div>
+                </div>
+
+                <div class="header-section center-section">
+                    <div class="player-name-display" id="player-name-3">JUANITO69</div>
+                </div>
+
+                <div class="header-section right-section">
+                    <div class="score-display" id="player-score-3">SCORE: 00</div>
+                    <div class="action-buttons">
+                        <button class="action-btn sound-btn">
+                            <i class="bi bi-volume-up"></i>
+                        </button>
+                        <button class="action-btn refresh-btn">
+                            <i class="bi bi-arrow-clockwise"></i>
+                        </button>
+                        <button class="action-btn help-btn">
+                            <i class="bi bi-question-circle"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <main class="difficulty-selection-area">
+                <h1 class="difficulty-selection-title">Selecciona el Nivel</h1>
+                <div class="difficulty-cards-container">
+                    <div class="difficulty-card easy-level" data-difficulty="easy">
+                        <div class="difficulty-label">Fácil</div>
+                    </div>
+
+                    <div class="difficulty-card normal-level" data-difficulty="normal">
+                        <div class="difficulty-label">Normal</div>
+                    </div>
+
+                    <div class="difficulty-card hard-level" data-difficulty="difficult">
+                        <div class="difficulty-label">Difícil</div>
+                    </div>
+                </div>
+                <button class="selection-back-btn btn-back" data-target="mode-select-screen">Regresar</button>
+            </main>
+        </div>
+
+        <!-- Pantalla de Selección de Capítulo -->
+        <div id="chapter-select-screen" class="screen">
+            <div class="landscape-background">
+                <div class="sky-layer"></div>
+                <div class="clouds-layer"></div>
+                <div class="mountains-layer"></div>
+                <div class="hills-layer"></div>
+                <div class="trees-layer"></div>
+                <div class="grass-layer"></div>
+            </div>
+
+            <header class="prototype-header">
+                <div class="header-section left-section">
+                    <button class="back-arrow-btn btn-back" data-target="difficulty-select-screen">
+                        <i class="bi bi-arrow-left"></i>
+                    </button>
+                    <div class="game-brand">
+                        <i class="bi bi-controller controller-icon"></i>
+                        <div class="brand-text">
+                            <span class="education-text">Education</span>
+                            <span class="games-text">Games</span>
+                        </div>
+                    </div>
+                    <div class="progress-counter">0/10</div>
+                </div>
+
+                <div class="header-section center-section">
+                    <div class="player-name-display" id="player-name-4">JUANITO69</div>
+                </div>
+
+                <div class="header-section right-section">
+                    <div class="score-display" id="player-score-4">SCORE: 00</div>
+                    <div class="action-buttons">
+                        <button class="action-btn sound-btn">
+                            <i class="bi bi-volume-up"></i>
+                        </button>
+                        <button class="action-btn refresh-btn">
+                            <i class="bi bi-arrow-clockwise"></i>
+                        </button>
+                        <button class="action-btn help-btn">
+                            <i class="bi bi-question-circle"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <main class="chapter-selection-area">
+                <h2 class="level-indicator" id="chapter-level-title">Nivel Fácil</h2>
+                <div class="chapters-grid" id="chapter-grid">
+                    <!-- Los capítulos se generan dinámicamente -->
+                </div>
+                <button class="selection-back-btn btn-back" data-target="difficulty-select-screen">Regresar</button>
+            </main>
+        </div>
+
+        <!-- Overlay de retroalimentación -->
+        <div id="feedback-overlay" class="feedback-overlay">
+            <div id="feedback-text" class="feedback-message">¡FELICIDADES!</div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="js/apiService.js"></script>
+        <script src="js/audioManager.js"></script>
+        <script src="js/animationManager.js"></script>
+        <script src="js/dragAndDrop.js"></script>
+        <script src="js/game.js"></script>
+    </body>
+
+    </html>

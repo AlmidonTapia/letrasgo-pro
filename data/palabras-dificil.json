@@ -1,0 +1,153 @@
+[
+  {
+    "difficulty": "difficult",
+    "chapter": 1,
+    "word": "CONSTANTINOPLA",
+    "syllables": ["CONS", "TAN", "TI", "NO", "PLA"],
+    "solution": "CONSTANTINOPLA",
+    "image": "images/words/dificil/constantinopla.png",
+    "audio": "audio/words/dificil/constantinopla.mp3"
+  },
+  {
+    "difficulty": "difficult",
+    "chapter": 2,
+    "word": "PARALELEPÍPEDO",
+    "syllables": ["PA", "RA", "LE", "LE", "PÍ", "PE", "DO"],
+    "solution": "PARALELEPÍPEDO",
+    "image": "images/words/dificil/paralelepipedo.png",
+    "audio": "audio/words/dificil/paralelepipedo.mp3"
+  },
+  {
+    "difficulty": "difficult",
+    "chapter": 3,
+    "word": "ESTERNOCLEIDOMASTOIDEO",
+    "syllables": ["ES", "TER", "NO", "CLEI", "DO", "MAS", "TOI", "DEO"],
+    "solution": "ESTERNOCLEIDOMASTOIDEO",
+    "image": "images/words/dificil/esternocleidomastoideo.png",
+    "audio": "audio/words/dificil/esternocleidomastoideo.mp3"
+  },
+  {
+    "difficulty": "difficult",
+    "chapter": 4,
+    "word": "ELECTROENCEFALOGRAMA",
+    "syllables": ["E", "LEC", "TRO", "EN", "CE", "FA", "LO", "GRA", "MA"],
+    "solution": "ELECTROENCEFALOGRAMA",
+    "image": "images/words/dificil/electroencefalograma.png",
+    "audio": "audio/words/dificil/electroencefalograma.mp3"
+  },
+  {
+    "difficulty": "difficult",
+    "chapter": 5,
+    "word": "ANTICONSTITUCIONALÍSIMAMENTE",
+    "syllables": [
+      "AN",
+      "TI",
+      "CONS",
+      "TI",
+      "TU",
+      "CIO",
+      "NA",
+      "LÍ",
+      "SI",
+      "MA",
+      "MEN",
+      "TE"
+    ],
+    "solution": "ANTICONSTITUCIONALÍSIMAMENTE",
+    "image": "images/words/dificil/anticonstitucionalísimamente.png",
+    "audio": "audio/words/dificil/anticonstitucionalísimamente.mp3"
+  },
+  {
+    "difficulty": "difficult",
+    "chapter": 6,
+    "word": "OTORRINOLARINGÓLOGO",
+    "syllables": ["O", "TO", "RRI", "NO", "LA", "RIN", "GÓ", "LO", "GO"],
+    "solution": "OTORRINOLARINGÓLOGO",
+    "image": "images/words/dificil/otorrinolaringólogo.png",
+    "audio": "audio/words/dificil/otorrinolaringólogo.mp3"
+  },
+  {
+    "difficulty": "difficult",
+    "chapter": 7,
+    "word": "DESOXIRRIBONUCLEICO",
+    "syllables": ["DE", "SO", "XI", "RRI", "BO", "NU", "CLEI", "CO"],
+    "solution": "DESOXIRRIBONUCLEICO",
+    "image": "images/words/dificil/desoxirribonucleico.png",
+    "audio": "audio/words/dificil/desoxirribonucleico.mp3"
+  },
+  {
+    "difficulty": "difficult",
+    "chapter": 8,
+    "word": "HIPOPOTOMONSTROSESQUIPEDALIOFOBIA",
+    "syllables": [
+      "HI",
+      "PO",
+      "PO",
+      "TO",
+      "MONS",
+      "TRO",
+      "SES",
+      "QUI",
+      "PE",
+      "DA",
+      "LIO",
+      "FO",
+      "BIA"
+    ],
+    "solution": "HIPOPOTOMONSTROSESQUIPEDALIOFOBIA",
+    "image": "images/words/dificil/hipopotomonstrosesquipedaliofobia.png",
+    "audio": "audio/words/dificil/hipopotomonstrosesquipedaliofobia.mp3"
+  },
+  {
+    "difficulty": "difficult",
+    "chapter": 9,
+    "word": "PNEUMONOULTRAMICROSCOPICSILICOVOLCANOCONIOSIS",
+    "syllables": [
+      "PNEU",
+      "MO",
+      "NO",
+      "UL",
+      "TRA",
+      "MI",
+      "CROS",
+      "CO",
+      "PIC",
+      "SI",
+      "LI",
+      "CO",
+      "VOL",
+      "CA",
+      "NO",
+      "CO",
+      "NIO",
+      "SIS"
+    ],
+    "solution": "PNEUMONOULTRAMICROSCOPICSILICOVOLCANOCONIOSIS",
+    "image": "images/words/dificil/pneumonoultramicroscopicsilicovolcanoconiosis.png",
+    "audio": "audio/words/dificil/pneumonoultramicroscopicsilicovolcanoconiosis.mp3"
+  },
+  {
+    "difficulty": "difficult",
+    "chapter": 10,
+    "word": "SUPERCALIFRAGILISTICOESPIALIDOSO",
+    "syllables": [
+      "SU",
+      "PER",
+      "CA",
+      "LI",
+      "FRA",
+      "GI",
+      "LIS",
+      "TI",
+      "CO",
+      "ES",
+      "PIA",
+      "LI",
+      "DO",
+      "SO"
+    ],
+    "solution": "SUPERCALIFRAGILISTICOESPIALIDOSO",
+    "image": "images/words/dificil/supercalifragilisticoespialidoso.png",
+    "audio": "audio/words/dificil/supercalifragilisticoespialidoso.mp3"
+  }
+]

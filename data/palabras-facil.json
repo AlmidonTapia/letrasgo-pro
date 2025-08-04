@@ -1,0 +1,92 @@
+[
+  {
+    "difficulty": "easy",
+    "chapter": 1,
+    "word": "CASA",
+    "syllables": ["CA", "SA"],
+    "solution": "CASA",
+    "image": "images/words/facil/casa.png",
+    "audio": "audio/words/facil/casa.mp3"
+  },
+  {
+    "difficulty": "easy",
+    "chapter": 2,
+    "word": "GATO",
+    "syllables": ["GA", "TO"],
+    "solution": "GATO",
+    "image": "images/words/facil/gato.png",
+    "audio": "audio/words/facil/gato.mp3"
+  },
+  {
+    "difficulty": "easy",
+    "chapter": 3,
+    "word": "LEON",
+    "syllables": ["LE", "ON"],
+    "solution": "LEON",
+    "image": "images/words/facil/leon.png",
+    "audio": "audio/words/facil/leon.mp3"
+  },
+  {
+    "difficulty": "easy",
+    "chapter": 4,
+    "word": "MAMÁ",
+    "syllables": ["MA", "MÁ"],
+    "solution": "MAMÁ",
+    "image": "images/words/facil/mama.png",
+    "audio": "audio/words/facil/mama.mp3"
+  },
+  {
+    "difficulty": "easy",
+    "chapter": 5,
+    "word": "MESA",
+    "syllables": ["ME", "SA"],
+    "solution": "MESA",
+    "image": "images/words/facil/mesa.png",
+    "audio": "audio/words/facil/mesa.mp3"
+  },
+  {
+    "difficulty": "easy",
+    "chapter": 6,
+    "word": "MAPA",
+    "syllables": ["MA", "PA"],
+    "solution": "MAPA",
+    "image": "images/words/facil/mapa.png",
+    "audio": "audio/words/facil/mapa.mp3"
+  },
+  {
+    "difficulty": "easy",
+    "chapter": 7,
+    "word": "MOMIA",
+    "syllables": ["MO", "MIA"],
+    "solution": "MOMIA",
+    "image": "images/words/facil/momia.png",
+    "audio": "audio/words/facil/momia.mp3"
+  },
+  {
+    "difficulty": "easy",
+    "chapter": 8,
+    "word": "MONO",
+    "syllables": ["MO", "NO"],
+    "solution": "MONO",
+    "image": "images/words/facil/mono.png",
+    "audio": "audio/words/facil/mono.mp3"
+  },
+  {
+    "difficulty": "easy",
+    "chapter": 9,
+    "word": "NUBE",
+    "syllables": ["NU", "BE"],
+    "solution": "NUBE",
+    "image": "images/words/facil/nube.png",
+    "audio": "audio/words/facil/nube.mp3"
+  },
+  {
+    "difficulty": "easy",
+    "chapter": 10,
+    "word": "PUERTA",
+    "syllables": ["PU", "ER", "TA"],
+    "solution": "PUERTA",
+    "image": "images/words/facil/puerta.png",
+    "audio": "audio/words/facil/puerta.mp3"
+  }
+]

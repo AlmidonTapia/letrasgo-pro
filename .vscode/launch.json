@@ -1,0 +1,32 @@
+{
+  "name": "letrasgo-pro-debug",
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Node.js",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/app.js",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal",
+      "restart": true,
+      "runtimeExecutable": "node",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Debug Seed Database",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/util/seedDatabase.js",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    }
+  ]
+}

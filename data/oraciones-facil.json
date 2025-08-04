@@ -1,0 +1,92 @@
+[
+  {
+    "difficulty": "easy",
+    "chapter": 1,
+    "sentence": "EL GATO DUERME",
+    "words": ["EL", "GATO", "DUERME"],
+    "solution": "EL GATO DUERME",
+    "image": "images/sentences/facil/gato_duerme.png",
+    "audio": "audio/sentences/facil/gato_duerme.mp3"
+  },
+  {
+    "difficulty": "easy",
+    "chapter": 2,
+    "sentence": "LA CASA ES GRANDE",
+    "words": ["LA", "CASA", "ES", "GRANDE"],
+    "solution": "LA CASA ES GRANDE",
+    "image": "images/sentences/facil/casa_grande.png",
+    "audio": "audio/sentences/facil/casa_grande.mp3"
+  },
+  {
+    "difficulty": "easy",
+    "chapter": 3,
+    "sentence": "MI MAMÁ COCINA",
+    "words": ["MI", "MAMÁ", "COCINA"],
+    "solution": "MI MAMÁ COCINA",
+    "image": "images/sentences/facil/mama_cocina.png",
+    "audio": "audio/sentences/facil/mama_cocina.mp3"
+  },
+  {
+    "difficulty": "easy",
+    "chapter": 4,
+    "sentence": "EL PERRO COME",
+    "words": ["EL", "PERRO", "COME"],
+    "solution": "EL PERRO COME",
+    "image": "images/sentences/facil/perro_come.png",
+    "audio": "audio/sentences/facil/perro_come.mp3"
+  },
+  {
+    "difficulty": "easy",
+    "chapter": 5,
+    "sentence": "LA LUNA BRILLA",
+    "words": ["LA", "LUNA", "BRILLA"],
+    "solution": "LA LUNA BRILLA",
+    "image": "images/sentences/facil/luna_brilla.png",
+    "audio": "audio/sentences/facil/luna_brilla.mp3"
+  },
+  {
+    "difficulty": "easy",
+    "chapter": 6,
+    "sentence": "LOS NIÑOS JUEGAN",
+    "words": ["LOS", "NIÑOS", "JUEGAN"],
+    "solution": "LOS NIÑOS JUEGAN",
+    "image": "images/sentences/facil/niños_juegan.png",
+    "audio": "audio/sentences/facil/niños_juegan.mp3"
+  },
+  {
+    "difficulty": "easy",
+    "chapter": 7,
+    "sentence": "EL SOL SALE",
+    "words": ["EL", "SOL", "SALE"],
+    "solution": "EL SOL SALE",
+    "image": "images/sentences/facil/sol_sale.png",
+    "audio": "audio/sentences/facil/sol_sale.mp3"
+  },
+  {
+    "difficulty": "easy",
+    "chapter": 8,
+    "sentence": "MI PAPÁ TRABAJA",
+    "words": ["MI", "PAPÁ", "TRABAJA"],
+    "solution": "MI PAPÁ TRABAJA",
+    "image": "images/sentences/facil/papa_trabaja.png",
+    "audio": "audio/sentences/facil/papa_trabaja.mp3"
+  },
+  {
+    "difficulty": "easy",
+    "chapter": 9,
+    "sentence": "LA FLOR HUELE",
+    "words": ["LA", "FLOR", "HUELE"],
+    "solution": "LA FLOR HUELE",
+    "image": "images/sentences/facil/flor_huele.png",
+    "audio": "audio/sentences/facil/flor_huele.mp3"
+  },
+  {
+    "difficulty": "easy",
+    "chapter": 10,
+    "sentence": "EL AGUA ESTÁ FRÍA",
+    "words": ["EL", "AGUA", "ESTÁ", "FRÍA"],
+    "solution": "EL AGUA ESTÁ FRÍA",
+    "image": "images/sentences/facil/agua_fria.png",
+    "audio": "audio/sentences/facil/agua_fria.mp3"
+  }
+]
