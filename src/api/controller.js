@@ -1,6 +1,7 @@
 const User = require("../models/userModel");
 const Word = require("../models/wordModel");
 const Sentence = require("../models/sentenceModel");
+const { sendTokenResponse } = require("../middleware/auth");
 
 // --- Autenticación ---
 exports.register = async (req, res) => {
@@ -38,16 +39,9 @@ exports.register = async (req, res) => {
     }
 
     const user = await User.create({ username, password });
-    req.session.userId = user._id; // Inicia la sesión
 
-    res.status(201).json({
-      success: true,
-      message: "Usuario registrado con éxito.",
-      data: {
-        userId: user._id,
-        username: user.username,
-      },
-    });
+    // Enviar token en respuesta
+    sendTokenResponse(user, 201, res);
   } catch (error) {
     console.error("Error en registro:", error);
     res.status(500).json({
@@ -71,16 +65,8 @@ exports.login = async (req, res) => {
 
     const user = await User.findOne({ username: username.toLowerCase() });
     if (user && (await user.comparePassword(password))) {
-      req.session.userId = user._id; // Inicia la sesión
-      res.status(200).json({
-        success: true,
-        message: "Login exitoso.",
-        data: {
-          userId: user._id,
-          username: user.username,
-          score: user.score,
-        },
-      });
+      // Enviar token en respuesta
+      sendTokenResponse(user, 200, res);
     } else {
       res.status(401).json({
         success: false,
@@ -97,41 +83,40 @@ exports.login = async (req, res) => {
 };
 
 exports.logout = (req, res) => {
-  req.session.destroy((err) => {
-    if (err) {
-      console.error("Error cerrando sesión:", err);
-      return res.status(500).json({
-        success: false,
-        message: "No se pudo cerrar la sesión.",
-      });
-    }
-    res.clearCookie("connect.sid");
+  try {
+    // Limpiar cookie del token
+    res.clearCookie("token");
     res.status(200).json({
       success: true,
       message: "Sesión cerrada con éxito.",
     });
-  });
+  } catch (error) {
+    console.error("Error cerrando sesión:", error);
+    res.status(500).json({
+      success: false,
+      message: "Error al cerrar sesión.",
+    });
+  }
 };
 
 exports.checkAuth = async (req, res) => {
   try {
-    if (req.session.userId) {
-      const user = await User.findById(req.session.userId).select("-password");
-      if (user) {
-        return res.status(200).json({
-          success: true,
-          data: {
-            isAuthenticated: true,
-            user: {
-              id: user._id,
-              username: user.username,
-              score: user.score,
-              progress: user.progress,
-            },
+    // El middleware de protección ya habrá validado el token y agregado req.user
+    if (req.user) {
+      return res.status(200).json({
+        success: true,
+        data: {
+          isAuthenticated: true,
+          user: {
+            id: req.user._id,
+            username: req.user.username,
+            score: req.user.score,
+            progress: req.user.progress,
           },
-        });
-      }
+        },
+      });
     }
+
     res.status(200).json({
       success: true,
       data: { isAuthenticated: false },
@@ -223,13 +208,7 @@ exports.getGameContent = async (req, res) => {
 };
 
 exports.updateProgress = async (req, res) => {
-  if (!req.session.userId) {
-    return res.status(401).json({
-      success: false,
-      message: "No autorizado.",
-    });
-  }
-
+  // El middleware protect ya validó la autenticación
   try {
     const { mode, difficulty, chapter, scoreToAdd } = req.body;
 
@@ -241,7 +220,7 @@ exports.updateProgress = async (req, res) => {
       });
     }
 
-    const user = await User.findById(req.session.userId);
+    const user = await User.findById(req.user._id);
 
     if (!user) {
       return res.status(404).json({

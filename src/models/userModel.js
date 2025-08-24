@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
+const bcryptjs = require("bcryptjs");
 
 // Esquema para el progreso en un nivel de dificultad específico
 const progressSchema = new mongoose.Schema(
@@ -32,6 +32,7 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
       required: [true, "La contraseña es obligatoria"],
+      minlength: [4, "La contraseña debe tener al menos 4 caracteres"],
     },
     score: {
       type: Number,
@@ -48,14 +49,14 @@ const userSchema = new mongoose.Schema(
 // Middleware para hashear la contraseña antes de guardar
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) return next();
-  const salt = await bcrypt.genSalt(10);
-  this.password = await bcrypt.hash(this.password, salt);
+  const salt = await bcryptjs.genSalt(10);
+  this.password = await bcryptjs.hash(this.password, salt);
   next();
 });
 
 // Método para comparar la contraseña ingresada con la hasheada
 userSchema.methods.comparePassword = async function (enteredPassword) {
-  return await bcrypt.compare(enteredPassword, this.password);
+  return await bcryptjs.compare(enteredPassword, this.password);
 };
 
 module.exports = mongoose.model("User", userSchema);

@@ -1,8 +1,7 @@
 // Importaciones de módulos
 const express = require("express");
 const path = require("path");
-const session = require("express-session");
-const MongoStore = require("connect-mongo");
+const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
@@ -23,21 +22,8 @@ const app = express();
 app.use(express.json());
 // Para parsear datos de formularios
 app.use(express.urlencoded({ extended: true }));
-
-// Configuración de la Sesión
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-    store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
-    cookie: {
-      httpOnly: true,
-      secure: false, // Poner en 'true' en producción (HTTPS)
-      maxAge: 1000 * 60 * 60 * 24, // 1 día de duración
-    },
-  })
-);
+// Para parsear cookies
+app.use(cookieParser());
 
 // --- Rutas ---
 // Sirve los archivos estáticos del frontend (CSS, JS, imágenes, etc.)
@@ -46,26 +32,18 @@ app.use(express.static(path.join(__dirname, "../public")));
 // Rutas de la API
 app.use("/api", apiRoutes);
 
-// Sirve la página de entrada principal (con validación de sesión)
+// Sirve la página de entrada principal
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
 // Sirve la página de landing (autenticación)
 app.get("/landing", (req, res) => {
-  // Si ya está autenticado, redirigir al juego
-  if (req.session.userId) {
-    return res.redirect("/game");
-  }
   res.sendFile(path.join(__dirname, "../public/landing.html"));
 });
 
-// Sirve la página del juego (requiere autenticación)
+// Sirve la página del juego
 app.get("/game", (req, res) => {
-  // Middleware de protección: si no hay sesión, redirige al landing
-  if (!req.session.userId) {
-    return res.redirect("/landing");
-  }
   res.sendFile(path.join(__dirname, "../public/game.html"));
 });
 

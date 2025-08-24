@@ -1,16 +1,39 @@
 class ApiService {
   constructor() {
     this.baseURL = "/api";
+    this.token = this.getTokenFromCookie();
+  }
+
+  // Obtener token desde cookie
+  getTokenFromCookie() {
+    const cookies = document.cookie.split(";");
+    for (let cookie of cookies) {
+      const [name, value] = cookie.trim().split("=");
+      if (name === "token") {
+        return value;
+      }
+    }
+    return null;
   }
 
   // Método genérico para hacer peticiones HTTP
   async request(endpoint, options = {}) {
     const url = `${this.baseURL}${endpoint}`;
+
+    // Preparar headers
+    const headers = {
+      "Content-Type": "application/json",
+      ...options.headers,
+    };
+
+    // Agregar token de autorización si existe
+    if (this.token) {
+      headers.Authorization = `Bearer ${this.token}`;
+    }
+
     const config = {
-      headers: {
-        "Content-Type": "application/json",
-        ...options.headers,
-      },
+      headers,
+      credentials: "include", // Para incluir cookies
       ...options,
     };
 
@@ -22,9 +45,14 @@ class ApiService {
       const response = await fetch(url, config);
       const data = await response.json();
 
+      // Actualizar token si viene en la respuesta
+      if (data.data?.token) {
+        this.token = data.data.token;
+      }
+
       return {
         success: response.ok,
-        data: data,
+        data: data.data || data,
         status: response.status,
         message: data.message || (response.ok ? "Success" : "Error"),
       };
